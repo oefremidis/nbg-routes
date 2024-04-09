@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ProductsComponent } from './products/products.component';
+import { HomeComponent } from './info-page/home/home.component';
+import { ProductsComponent } from './info-page/products/products.component';
 import { FileNotFoundComponent } from './file-not-found/file-not-found.component';
 
 @Component({
@@ -13,4 +13,5 @@ import { FileNotFoundComponent } from './file-not-found/file-not-found.component
 })
 export class AppComponent {
   title = 'nbg-routes';
+
 }

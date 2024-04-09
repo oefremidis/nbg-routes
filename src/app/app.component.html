@@ -7,10 +7,31 @@
 <!-- <router-outlet></router-outlet> -->
 
 <!-- 3. Use a navigation bar -->
-<nav>
+<!-- <nav>
   <ul>
     <li><a routerLink="home" routerLinkActive="active">Home</a></li>
     <li><a routerLink="products" routerLinkActive="active">Products</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet> -->
+
+<!-- or -->
+
+<!-- <nav>
+  <ul>
+    <li><a [routerLink]="['home']" [routerLinkActive]="'active'">Home</a></li>
+    <li><a [routerLink]="'products'" routerLinkActive="active">Products</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet> -->
+
+
+<nav>
+  <ul>
+    <li><a [routerLink]="['info', 'home']" [routerLinkActive]="'active'">Home</a></li>
+    <li><a [routerLink]="['info', 'products']" routerLinkActive="active">Products</a></li>
+    <!-- or using a sub-nav -->
+    <li><a [routerLink]="['communication']" routerLinkActive="active">Communication</a></li>
   </ul>
 </nav>
 <router-outlet></router-outlet>
