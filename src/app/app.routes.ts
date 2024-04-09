@@ -7,6 +7,8 @@ import { CommunicationPageComponent } from './communication-page/communication-p
 import { ContactComponent } from './communication-page/contact/contact.component';
 import { AboutComponent } from './communication-page/about/about.component';
 import { COMMUNICATION_ROUTES } from './communication-page/communication-page.routes';
+import { goGuard } from './guards/go.guard';
+import { stopGuard } from './guards/stop.guard';
 
 // 1. Simple Routing
 // export const routes: Routes = [
@@ -42,13 +44,18 @@ import { COMMUNICATION_ROUTES } from './communication-page/communication-page.ro
 
 
 // 3. different routing files
+// Lazy loading
+// guards
 export const routes: Routes = [
   {
     path: 'info',
     component: InfoPageComponent,
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'products', component: ProductsComponent }
+      { path: 'products', component: ProductsComponent, 
+        // canActivate: [goGuard]
+        canDeactivate: [stopGuard] 
+    }
     ]
   },
   // just copy here...
